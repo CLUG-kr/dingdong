@@ -11,7 +11,7 @@ import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
 
-    WebView webView;
+    //WebView webView;
     VideoView videoView;
 
     @Override
@@ -19,16 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+/*
         videoView = (android.widget.VideoView) findViewById(R.id.videoView);
-        webView =(WebView) findViewById(R.id.webview);
+        //webView =(WebView) findViewById(R.id.webview);
 
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
 
-        videoView.setVideoURI(Uri.parse("http://165.194.17.13:8080/?action=stream"));
+        //videoView.setVideoURI(Uri.parse("http://165.194.17.13:8080/javascript_simple.html"));
+        videoView.setVideoURI(Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
         videoView.requestFocus();
         videoView.start();
-
+*/
+        /*
         webView.setPadding(50,0,50,0);
 
         webView.getSettings().setJavaScriptEnabled(true);
@@ -44,8 +48,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        String url ="http://165.194.17.13:8080/javascript_simple.html";
+        //String url ="http://165.194.17.13:8080/javascript_simple.html";
+        String url = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"; //임시 주소
         webView.loadUrl(url);
+        */
     }
 }
+
+
+/*
+        String imgSrcHtml = "<html><img src='" + url + "' /></html>";
+
+        webView.loadData(imgSrcHtml, "video/html", "UTF-8");
+        //webView.setInitialScale(100);
+        webView.getSettings().setBuiltInZoomControls(false);
+
+        //webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
+
+        String url ="165.194.17.13:8080";
+        webView.loadUrl(url);
+        //String imgSrcHtml = "<html><img src='" + url + "' /></html>";
+        // String imgSrcHtml = url;
+        //webView.loadData(imgSrcHtml, "text/html", "UTF-8");
+        */
 

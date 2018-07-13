@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <layer-list>
             <!-- shadow (밑으로) : 그림자 -->
-            <item android:top="3dp"
-                android:left="2dp">
+            <item android:top="3dp">
                 <shape
+                    android:shape="ring"
                     android:innerRadius="0dp"
                     android:thickness="30dp"
                     android:useLevel="false"
                     >
-                    <solid android:color="#5f000000" />
+                    <corners android:radius="3dp" />
+                    <solid android:color="#1f000000" />
                 </shape>
             </item>
             <!-- background (위로) -->
-            <item android:bottom="3dp"
-                android:right="2dp">
+            <item android:bottom="3dp">
                 <shape
+                    android:shape="ring"
                     android:innerRadius="0dp"
                     android:thickness="30dp"
                     android:useLevel="false">
 
-                    <solid android:color="#ffffff" />
+                    <corners android:radius="3dp" />
+                    <solid android:color="#F04A58"/>
 
                 </shape>
             </item>
