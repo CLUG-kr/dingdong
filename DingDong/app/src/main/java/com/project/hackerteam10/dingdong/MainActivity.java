@@ -1,11 +1,14 @@
 package com.project.hackerteam10.dingdong;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -13,45 +16,29 @@ public class MainActivity extends AppCompatActivity {
 
     //WebView webView;
     VideoView videoView;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        button = (Button) findViewById(R.id.button2);
 
-/*
-        videoView = (android.widget.VideoView) findViewById(R.id.videoView);
-        //webView =(WebView) findViewById(R.id.webview);
-
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-
-        //videoView.setVideoURI(Uri.parse("http://165.194.17.13:8080/javascript_simple.html"));
-        videoView.setVideoURI(Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
-        videoView.requestFocus();
-        videoView.start();
-*/
-        /*
-        webView.setPadding(50,0,50,0);
-
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setBuiltInZoomControls(false);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
-
-        webView.setWebViewClient(new WebViewClient() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StreamVideo.class);
+
+                startActivity(intent);
+
+                finish();
             }
         });
 
-        //String url ="http://165.194.17.13:8080/javascript_simple.html";
-        String url = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"; //임시 주소
-        webView.loadUrl(url);
-        */
+
+
+
     }
 }
 
